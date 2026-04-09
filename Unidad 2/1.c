@@ -23,6 +23,6 @@ int main(){
     printf("\nEl resultado de la suma es: %d",suma);
     printf("\nEl resultado de la resta es: %d",resta);
     printf("\nEl resultado del producto es: %d",producto);
-    printf("\nEl resultado del cociente es: %f",cociente);
+    printf("\nEl resultado del cociente es: %.2f",cociente);
     return 0;
 }

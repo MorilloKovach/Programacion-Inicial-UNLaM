@@ -6,3 +6,25 @@ número es distinto de cero.
 
 #include<stdio.h>
 
+int main(){
+    int num1,num2;
+    int suma,resta,producto;
+    float cociente;
+
+    printf("Ingrese el primer numero: ");
+    scanf("%d",&num1);
+    printf("\nIngrese el segundo numero: ");
+    scanf("%d",&num2);
+
+    suma = num1+num2;
+    resta = num1-num2;
+    producto = num1*num2;
+    cociente = (float)num1/num2;
+
+    printf("\nEl resultado de la suma es: %d",suma);
+    printf("\nEl resultado de la resta es: %d",resta);
+    printf("\nEl resultado del producto es: %d",producto);
+    printf("\nEl resultado del cociente es: %d",cociente);
+
+    return 0;
+}

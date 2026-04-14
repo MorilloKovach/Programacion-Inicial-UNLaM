@@ -13,7 +13,7 @@ int main(){
     int miniMed = 0;
     int t;
     int i = 1;
-    scanf(" %d",&t) != -50;
+    scanf(" %d",&t);
     while(t != -50){
         if(t > maxi){
             maxi = t;
@@ -24,7 +24,7 @@ int main(){
             miniMed = i;
         }
         i++;
-        scanf(" %d",&t) != -50;
+        scanf(" %d",&t);
     }
     printf("La minima temperatura se obtuvo en la posicion %d con una temperatura de %d\n",miniMed,mini);
     printf("La maxima temperatura se obtuvo en la posicion %d con una temperatura de %d\n",maxiMed,maxi);

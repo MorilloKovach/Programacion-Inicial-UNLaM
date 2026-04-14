@@ -1,9 +1,0 @@
-practica
-10
-.gitignore
-# Ignorar todo en el directorio
-*
-# No ignorar archivos que tengan un punto (ej: main.c, script.py)
-!*.*
-# No ignorar carpetas para que Git pueda entrar en ellas
-!*/

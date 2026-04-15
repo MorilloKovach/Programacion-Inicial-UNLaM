@@ -27,6 +27,10 @@ int main(){
         }
         else{
             printf("\nVuelva a digitar otro codigo.: ");
+            getchar();
+            printf("\nDigite otro codigo: ");
+            scanf("%c",&cod);
+            continue;
         }
         getchar();
         tot_venta+=precio;

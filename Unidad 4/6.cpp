@@ -5,7 +5,6 @@ correspondiente valor numérico en ASCII.
 */
 
 #include <stdio.h>
-#include<ctype.h>
 int main()
 {
     char caracter;
@@ -19,7 +18,7 @@ int main()
         caracter == 'I' || caracter == 'O' || caracter == 'o' || caracter == 'u' || caracter == 'U')
     {
         int valor;
-        valor = toascii(caracter);
+        valor = caracter;
         printf("VOCAL: %d", valor);
     }
     

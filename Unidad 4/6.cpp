@@ -5,19 +5,21 @@ correspondiente valor numérico en ASCII.
 */
 
 #include <stdio.h>
-
+#include<ctype.h>
 int main()
 {
     char caracter;
     printf("Ingrese el caracter: ");
     scanf("%c", &caracter);
-    if (caracter == 'a' or caracter == 'A' or caracter == 'E' or caracter == 'e' or caracter == 'i' or caracter == 'I' or caracter == 'O' or caracter == 'o' or caracter == 'u' or caracter == 'U')
+    if (caracter == 'a' ||
+        caracter == 'A' ||
+        caracter == 'E' ||
+        caracter == 'e' ||
+        caracter == 'i' ||
+        caracter == 'I' || caracter == 'O' || caracter == 'o' || caracter == 'u' || caracter == 'U')
     {
         int valor;
-        if (caracter >= 'A' and caracter <= 'Z')
-            valor = caracter - 'A';
-        else
-            valor = caracter - 'a';
+        valor = toascii(caracter);
         printf("VOCAL: %d", valor);
     }
     

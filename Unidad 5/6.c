@@ -9,7 +9,7 @@ int main()
     scanf("%c", &cod);
     while (cod != 'C' && cod != 'E' && cod != 'T' && cod != 'F')
     {
-        printf("Digite otro codigo: ");
+        printf("\nDigite otro codigo, el anterior no fue valido: ");
         getchar();
         scanf("%c", &cod);
     }
@@ -22,7 +22,7 @@ int main()
         scanf("%f", &precio);
         while (precio < 0)
         {
-            printf("Digite una opcion valida: ");
+            printf("\nDigite una opcion valida: ");
             scanf("%f", &precio);
         }
         if (cod == 'C')
@@ -46,9 +46,8 @@ int main()
         scanf("%c", &cod);
         while (cod != 'C' && cod != 'E' && cod != 'T' && cod != 'F')
         {
-            printf("\nVuelva a digitar otro codigo.: ");
             getchar();
-            printf("\nDigite otro codigo: ");
+            printf("\nDigite otro codigo, el anterior no fue valido: ");
             scanf("%c", &cod);
         }
     }

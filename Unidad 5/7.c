@@ -10,7 +10,7 @@ int main(){
     printf("Desea correr operaciones? (S/N): ");
     scanf("%c",&continuar);
     while(continuar != 'S' && continuar != 'N'){
-        printf("Ingrese bien la opcion: ");
+        printf("\nIngrese bien la opcion: ");
         getchar();
         scanf("%c",&continuar);
     }
@@ -18,7 +18,7 @@ int main(){
         printf("\nIngrese el precio del producto: ");
         scanf("%f",&precio);
         while(precio < 0){
-            printf("Valor no valido, ingrese un precio correcto: ");
+            printf("\nValor no valido, ingrese un precio correcto: ");
             scanf("%d",&precio);
         }
         float precioOri = precio;
@@ -50,7 +50,7 @@ int main(){
         getchar();
         scanf("%c",&continuar);
         while(continuar != 'S' && continuar != 'N'){
-            printf("Ingrese una opcion valida: ");
+            printf("\nIngrese una opcion valida: ");
             getchar();
             scanf("%c",&continuar);
         }

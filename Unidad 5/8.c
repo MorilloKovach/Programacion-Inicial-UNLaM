@@ -7,7 +7,7 @@ int main()
     scanf("%c", &continuar);
     while (continuar != 'S' && continuar != 'N')
     {
-        printf("No ha puesto una opcion valida, ingrese nuevamente: ");
+        printf("\nNo ha puesto una opcion valida, ingrese nuevamente: ");
         getchar();
         scanf("%c", &continuar);
     }
@@ -19,34 +19,34 @@ int main()
         scanf("%d", &n);
         while (n <= 0)
         {
-            printf("El valor ingresado NO es correcto, ingrese otro: ");
+            printf("\nEl valor ingresado NO es correcto, ingrese otro: ");
             scanf("%d", &n);
         }
         printf("\nIngrese el salario del empleado: ");
         scanf("%f", &sal);
         while (sal < 0)
         {
-            printf("El valor no es correcto. Ingrese nuevamente: ");
+            printf("\nEl valor no es correcto. Ingrese nuevamente: ");
             scanf("%f", &sal);
         }
         printf("\nIngrese la antiguedad: ");
         scanf("%d", &antiguedad);
         while (antiguedad < 0)
         {
-            printf("El valor no es correcto. Ingrese nuevamente: ");
+            printf("\nEl valor no es correcto. Ingrese nuevamente: ");
             scanf("%f", &antiguedad);
         }
         printf("\nIngrese la cantidad de hijos: ");
         scanf("%d", &cant_hijos);
         while (cant_hijos < 0)
         {
-            printf("El valor no es correcto. Ingrese nuevamente: ");
+            printf("\nEl valor no es correcto. Ingrese nuevamente: ");
             scanf("%f", &cant_hijos);
         }
         printf("\nTiene estudios superiores? (1 SI, 0 NO): ");
         scanf("%d", &estudios_superiores);
         while(estudios_superiores != 1 && estudios_superiores != 0){
-            printf("No ha puesto una opcion valida, ingrese nuevamente: ");
+            printf("\nNo ha puesto una opcion valida, ingrese nuevamente: ");
             getchar();
             scanf("%d", &estudios_superiores);
         } 
@@ -67,12 +67,12 @@ int main()
         {
             sal += orig * 0.05;
         }
-        printf("El salario final del empleado numero %d es: %.2f\n", n, sal);
+        printf("\nEl salario final del empleado numero %d es: %.2f", n, sal);
         getchar();
-        printf("Desea ingresar otro empleado? (S para si, N para no): ");
+        printf("\nDesea ingresar otro empleado? (S para si, N para no): ");
         scanf("%c", &continuar);
         while(continuar != 'S' && continuar != 'N'){
-            printf("No ha puesto la opcion valida, ingrese nuevamente: ");
+            printf("\nNo ha puesto la opcion valida, ingrese nuevamente: ");
             getchar();
             scanf("%c", &continuar);
         } 

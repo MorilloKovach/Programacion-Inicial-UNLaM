@@ -4,7 +4,6 @@ informarlos con mensaje aclaratorio.
 */
 
 #include<stdio.h>
-//tiene ganas de romper las bolas este profe, es lo mismo.
 
 int main(){
     int numero;

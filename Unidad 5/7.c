@@ -6,12 +6,21 @@ int main(){
     float maxi_p = 0;
     int cant_men15 = 0;
     int cant = 0;
-    char continuar = 'S';
+    char continuar;
     printf("Desea correr operaciones? (S/N): ");
     scanf("%c",&continuar);
+    while(continuar != 'S' && continuar != 'N'){
+        printf("Ingrese bien la opcion: ");
+        getchar();
+        scanf("%c",&continuar);
+    }
     while(continuar != 'N'){
         printf("\nIngrese el precio del producto: ");
         scanf("%f",&precio);
+        while(precio < 0){
+            printf("Valor no valido, ingrese un precio correcto: ");
+            scanf("%d",&precio);
+        }
         float precioOri = precio;
         float desc;
         if(precio < 15000){
@@ -40,6 +49,11 @@ int main(){
         printf("\nDesea continuar? (S/N): ");
         getchar();
         scanf("%c",&continuar);
+        while(continuar != 'S' && continuar != 'N'){
+            printf("Ingrese una opcion valida: ");
+            getchar();
+            scanf("%c",&continuar);
+        }
     }
     printf("\nEl importe promedio por todas las ventas realizadas fue de: %.2f",tot_precio/cant);
     printf("\nEl importe mas grande de venta fue de %.2f",maxi_p);

@@ -26,6 +26,7 @@ int main(){
             ordMul7 = ingresados+1;
         }
         ingresados++;
+        printf("\nIngrese otro valor: ");
         scanf("%d",&num);
     }
 

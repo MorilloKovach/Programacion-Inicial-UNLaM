@@ -16,10 +16,9 @@ int main(){
     while(N>=0){
         int iterador = 2;
         int encontroDivisor = 0;
-        while(iterador < a){
+        while(iterador < a && encontroDivisor == 0){
             if(a%iterador == 0){
                 encontroDivisor = 1;
-                break;
             }
             iterador++;
         }

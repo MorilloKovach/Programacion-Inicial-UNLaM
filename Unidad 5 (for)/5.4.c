@@ -6,10 +6,10 @@ de N lo solicita por teclado el programa.
 #include<stdio.h>
 
 int main(){
-    int suma = 0,N,s;
+    int suma = 0,N,s,i;
     printf("Digite el valor de N: ");
     scanf("%d",&N);
-    for(int i = 0; i<N; i++){
+    for(i = 0; i<N; i++){
         printf("\nIngrese el valor del numero: ");
         scanf("%d",&s);
         suma+= (s > 0 ? s : 0);

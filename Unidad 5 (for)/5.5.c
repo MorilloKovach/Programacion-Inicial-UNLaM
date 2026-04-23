@@ -9,7 +9,7 @@ informar:
 #include<stdio.h>
 
 int main(){
-    int N, suma_pares = 0,val_mul_5 = 0,suma_mul3 = 0,a;
+    int N, suma_pares = 0,val_mul_5 = 0,suma_mul3 = 0,a,i;
 
     printf("Ingresa N: ");
     scanf("%d",&N);
@@ -17,7 +17,7 @@ int main(){
         printf("\nIngrese un valor positivo: ");
         scanf("%d",&N);
     }
-    for(int i = 0; i<N; i++){
+    for(i = 0; i<N; i++){
         printf("\nIngrese el numero %d: ",i+1);
         scanf("%d",&a);
         if((i+1)%2==0) suma_pares+=a;

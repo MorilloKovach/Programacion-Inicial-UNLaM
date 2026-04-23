@@ -5,7 +5,8 @@
 #include<stdio.h>
 
 int main(){
-    for(int i = 100; i<=500; i++){
+    int i;
+    for(i = 100; i<=500; i++){
         printf("Numero: %d\n",i);
     }
 }

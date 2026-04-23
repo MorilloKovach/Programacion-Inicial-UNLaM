@@ -7,8 +7,8 @@ menores que él.
 #include<stdio.h>
 
 int main(){
-    int suma=0;
-    for(int i = 2; i<=9000; i++){
+    int suma=0,i;
+    for(i = 2; i<=9000; i++){
         suma=0;
         for(int j = 1; j<i; j++){
             suma+=(i%j==0)?j:0;

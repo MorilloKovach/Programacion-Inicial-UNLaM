@@ -9,9 +9,9 @@ d. El porcentaje de alumnos que miden menos de 1.40 cm.
 #include<stdio.h>
 
 int main(){
-    int edad_prom=0, cant_al=0, midmen=0,edad;
+    int edad_prom=0, cant_al=0, midmen=0,edad,i;
     float est_prom=0,est;
-    for(int i = 0; i<45; i++){
+    for(i = 0; i<45; i++){
         printf("\nIngrese la edad del alumno %d: ",i+1);
         scanf("%d",&edad);
         edad_prom+=edad;

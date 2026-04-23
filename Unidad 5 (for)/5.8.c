@@ -12,26 +12,28 @@ INVALIDA” y a continuación finalizar el programa.
 #include <stdlib.h>
 int main()
 {
-    int N, sPos = 0, pos = 0, sNeg = 0, neg = 0, ceros = 0,p;
+    int N, sPos = 0, pos = 0, sNeg = 0, neg = 0, ceros = 0, p, i;
     printf("\nIngrese N: ");
     scanf("%d", &N);
     if (N < 1 || N > 12)
     {
         printf("\nCANTIDAD INVALIDA");
-        exit(0);
     }
-    for (int i = 0; i < N; i++)
+    else
     {
-        printf("\nIngrese el valor: ");
-        scanf("%d", &p);
-        if (p < 0)
-            sNeg += p, neg++;
-        else if (p > 0)
-            sPos += p, pos++;
-        else
-            ceros++;
+        for (i = 0; i < N; i++)
+        {
+            printf("\nIngrese el valor: ");
+            scanf("%d", &p);
+            if (p < 0)
+                sNeg += p, neg++;
+            else if (p > 0)
+                sPos += p, pos++;
+            else
+                ceros++;
+        }
+        printf("El promedio de los numeros positivos es: %.2f", (float)sPos / pos * 100.0);
+        printf("El promedio de los numeros negativos es: %.2f", (float)sNeg / neg * 100.0);
+        printf("La cantidad de ceros es: %d", ceros);
     }
-    printf("El promedio de los numeros positivos es: %.2f",(float)sPos/pos*100.0);
-    printf("El promedio de los numeros negativos es: %.2f",(float)sNeg/neg*100.0);
-    printf("La cantidad de ceros es: %d",ceros);
 }

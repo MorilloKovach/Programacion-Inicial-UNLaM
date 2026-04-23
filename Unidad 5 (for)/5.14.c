@@ -2,9 +2,9 @@
 
 int main()
 {
-    int n1, n2, n3;
+    int n1, n2, n3,i;
     int prom_min = 0;
-    for (int i = 0; i < 6; i++)
+    for (i = 0; i < 6; i++)
     {
         printf("\nIngrese la terna: ");
         scanf("%d%d%d", &n1, &n2, &n3);

@@ -5,8 +5,8 @@
 #include<stdio.h>
 
 int main(){
-    int suma = 0;
-    for(int i = 100; i>=50; i-=5){
+    int suma = 0,i;
+    for(i = 100; i>=50; i-=5){
         suma+=i;
     }
     printf("La suma fue: %d",suma);

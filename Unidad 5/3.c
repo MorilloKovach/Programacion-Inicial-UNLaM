@@ -9,13 +9,17 @@ divisor, no siga buscando ya que se sabe que el número NO es primo.
 #include<stdio.h>
 
 int main(){
-    int N;
+    int N,iterador,encontroDivisor;
     printf("Digite la cantidad de primos que quiere: ");
     scanf("%d",&N);
+    while(N<=0){
+        printf("Ingrese una cantidad positiva de primos: ");
+        scanf("%d",&N);
+    }
     int a = 2;
-    while(N>=0){
-        int iterador = 2;
-        int encontroDivisor = 0;
+    while(N>0){
+        iterador = 2;
+        encontroDivisor = 0;
         while(iterador < a && encontroDivisor == 0){
             if(a%iterador == 0){
                 encontroDivisor = 1;

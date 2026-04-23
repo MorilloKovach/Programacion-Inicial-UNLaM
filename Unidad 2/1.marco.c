@@ -13,14 +13,19 @@ int main()
     printf("ingrese el num 2\n");
     scanf("%d", &num2);
 
+    if (num2 == 0)
+    {
+        printf("Error: el segundo numero debe ser distinto de cero\n");
+        return 1;
+    }
 
     printf("La suma es %d \n",  num1 + num2);
 
     printf("El producto es %d \n", num1 * num2);
     
-    printf("El cociente es %d \n", num1 - num2);
+    printf("El cociente es %.2f \n", num1 / (float) num2);
 
-    printf("El resto es %d \n", num1 / num2);
+    printf("El resto es %d \n", num1 % num2);
 
     return num1;
 

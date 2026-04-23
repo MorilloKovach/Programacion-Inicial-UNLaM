@@ -18,7 +18,7 @@ $ 14000
 #include<stdio.h>
 
 int main(){
-    int sueldo_basico, horas_extras;
+    int sueldo_basico, horas_extras, tot;
     char categoria;
     printf("Ingrese el sueldo basico del trabajador: ");
     scanf("%d",&sueldo_basico);
@@ -28,23 +28,23 @@ int main(){
     scanf(" %c",&categoria);
 
     if(categoria=='A'){
-        int tot = sueldo_basico + horas_extras * 8000;
+        tot = sueldo_basico + horas_extras * 8000;
         printf("El sueldo total es de $%d ",tot);
     }
     else if(categoria=='B'){
-        int tot = sueldo_basico + horas_extras * 8800;
+        tot = sueldo_basico + horas_extras * 8800;
         printf("El sueldo total es de $%d ",tot);
     }
     else if(categoria=='C'){
-        int tot = sueldo_basico + horas_extras * 10000;
+        tot = sueldo_basico + horas_extras * 10000;
         printf("El sueldo total es de $%d ",tot);
     }
     else if(categoria=='D'){
-        int tot = sueldo_basico + horas_extras * 12000;
+        tot = sueldo_basico + horas_extras * 12000;
         printf("El sueldo total es de $%d ",tot);
     }
     else if(categoria=='E'){
-        int tot = sueldo_basico + horas_extras * 14000;
+        tot = sueldo_basico + horas_extras * 14000;
         printf("El sueldo total es de $%d ",tot);
     }
     else{

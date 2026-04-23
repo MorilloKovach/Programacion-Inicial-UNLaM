@@ -12,7 +12,7 @@ INVALIDA” y a continuación finalizar el programa.
 #include <stdlib.h>
 int main()
 {
-    int N;
+    int N, sPos = 0, pos = 0, sNeg = 0, neg = 0, ceros = 0,p;
     printf("\nIngrese N: ");
     scanf("%d", &N);
     if (N < 1 || N > 12)
@@ -20,12 +20,8 @@ int main()
         printf("\nCANTIDAD INVALIDA");
         exit(0);
     }
-    int sPos = 0, pos = 0;
-    int sNeg = 0, neg = 0;
-    int ceros = 0;
     for (int i = 0; i < N; i++)
     {
-        int p;
         printf("\nIngrese el valor: ");
         scanf("%d", &p);
         if (p < 0)

@@ -8,7 +8,7 @@ También informar la cantidad de otros símbolos que no sean ni letras ni númer
 #include<stdio.h>
 
 int main(){
-    char ing = 'a';
+    char ing;
     int nums=0, alfaMay=0,alfaMin=0;
     scanf(" %c",&ing);
     while(ing != '*'){

@@ -10,10 +10,9 @@ e) El porcentaje de números mayores a 1000 que se ingresaron.
 #include<stdio.h>
 
 int main(){
-    float s = 0, p = 1, prom = 0,maxi,mini,maxiMayo1000=0;
+    float s = 0, p = 1, prom = 0,maxi,mini,maxiMayo1000=0, num;
     int band = 0;
     for(int i = 0; i<15; i++){
-        float num;
         printf("\nIngrese el valor: ");
         scanf("%d",&num);
         s+=num;

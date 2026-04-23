@@ -5,11 +5,9 @@ Dado a que este problema tiene dos formas de resolverse, voy a resolver repitien
 #include<stdio.h>
 
 int main(){
-    int a,b,c;
+    int a,b,c,neg=0,num;
     a=b=c=-99999;
-    int neg = 0;
     for(int i = 0; i<18; i++){
-        int num;
         printf("\nIngrese el numero: ");
         scanf("%d",&num);
         if(a==-99999){
@@ -31,5 +29,5 @@ int main(){
     }
     printf("La cantidad de ternas negativas es: %d",neg);
 
-    
+
 }

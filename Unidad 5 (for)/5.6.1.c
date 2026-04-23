@@ -10,11 +10,8 @@ menos dos decimales en dicho promedio.
 
 
 int main(){
-    int s = 0;
-    int c = 0;
-    int aplazados=0;
+    int a,b, s = 0,c = 0, aplazados=0;
     for(int i = 0; i<20; i++){
-        int a,b;
         printf("\nIngrese el legajo del alumno: ");
         scanf("%d",&b);
         printf("\nIngrese la nota del alumno: ");

@@ -9,19 +9,15 @@ informar:
 #include<stdio.h>
 
 int main(){
-    int N;
+    int N, suma_pares = 0,val_mul_5 = 0,suma_mul3 = 0,a;
 
     printf("Ingresa N: ");
     scanf("%d",&N);
-    int suma_pares = 0;
-    int val_mul_5 = 0;
-    int suma_mul3 = 0;
     while(N<=0){
         printf("\nIngrese un valor positivo: ");
         scanf("%d",&N);
     }
     for(int i = 0; i<N; i++){
-        int a;
         printf("\nIngrese el numero %d: ",i+1);
         scanf("%d",&a);
         if((i+1)%2==0) suma_pares+=a;

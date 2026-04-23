@@ -23,6 +23,11 @@ d) El código de usuario con el menor consume, entre los que tienen consumo.
 
 int main(){
     float importe_minimo, importe_unidad;
+    int medidor_act, medidor_past=0, no_consumos=0, minimo_consumo = 9999999, usuario_efic;
+    int usuario;
+    float importe_act;
+    float sumaFacturas = 0.0;
+    int cantidad_facturas = 0;
     printf("Ingrese el importe minimo para hasta 80KW: ");
     scanf("%f",&importe_minimo);
     while(importe_minimo <= 0){
@@ -36,12 +41,8 @@ int main(){
         scanf("%f",&importe_minimo);
     }
 
-    int usuario;
-    int medidor_act, medidor_past=0, no_consumos=0, minimo_consumo = 9999999, usuario_efic;
     printf("\nIngrese el numero del usuario: ");
     scanf("%d",&usuario);
-    float sumaFacturas = 0.0;
-    int cantidad_facturas = 0;
     while(usuario < 0){
         printf("\nNo es valido ese usuario, ingrese otro: ");
         scanf("%d",&usuario);
@@ -64,7 +65,6 @@ int main(){
         }    
         
         */
-        float importe_act;
         if(medidor_act==0){
             no_consumos++;
         }

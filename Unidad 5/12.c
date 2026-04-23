@@ -32,6 +32,20 @@ adquiridos.
 
 int main(){
     int mes, cant_colegios;
+    int colegioOpinionBuena = 0;
+    int num_escuela,inscriptos;
+    char especialidad;
+    int respondieron;
+    int noTecnicos = 0, respTot = 0, malosCon = 0;
+    int mujeresTecnicas = 0;
+    int DNI, edad;
+    char sexo, opinion;
+    int mayorEdad = 0;
+    int DNIMayor = 0;
+    int NumEscuelaMayor = 0;
+    char TecnicaMayor;
+    int colegio_opi = 0;
+    int num_esc_opi = 0;
     printf("Ingresar un mes (1 a 12): ");
     scanf("%d",&mes);
     while(mes < 1 || mes > 12){
@@ -41,22 +55,11 @@ int main(){
 
     printf("\nIngrese la cantidad de colegios: ");
     scanf("%d",&cant_colegios);
-    int noTecnicos = 0, respTot = 0, malosCon = 0;
-    int mujeresTecnicas = 0;
-    int mayorEdad = 0;
-    int DNIMayor = 0;
-    int NumEscuelaMayor = 0;
-    char TecnicaMayor;
-    int colegio_opi = 0;
-    int num_esc_opi = 0;
     while(cant_colegios <= 0){
         printf("\nIngrese una cantidad positiva de colegios: ");
         scanf("%d",&cant_colegios);
     }
     while(cant_colegios--){
-        int colegioOpinionBuena = 0;
-        int num_escuela,inscriptos;
-        char especialidad;
         printf("\nIngrese el numero de la escuela: ");
         scanf("%d",&num_escuela);
         while(num_escuela <= 0){
@@ -78,7 +81,6 @@ int main(){
             scanf("%c",&especialidad);
         }
         printf("Ingrese la cantidad de alumnos que respondieron: ");
-        int respondieron;
         scanf("%d",&respondieron);
         if(especialidad == 'N'){
             noTecnicos+=respondieron;
@@ -90,8 +92,6 @@ int main(){
         respTot+=respondieron;
         printf("Respondieron la encuesta %.2f%%: ",respondieron/inscriptos*100.0);
         while(respondieron--){
-            int DNI, edad;
-            char sexo, opinion;
             printf("\nIngrese el DNI: ");
             scanf("%d",&DNI);
             while(DNI < 0){

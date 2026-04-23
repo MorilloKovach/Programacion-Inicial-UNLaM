@@ -7,12 +7,7 @@ sus posiciones respecto al ingreso.
 #include<stdio.h>
 
 int main(){
-    int maxi = -999;
-    int mini = 999;
-    int maxiMed = 0;
-    int miniMed = 0;
-    int t;
-    int i = 1;
+    int maxi = -999,mini = 999,maxiMed = 0,miniMed = 0,t, i = 1;
     printf("Ingrese una temperatura: ");
     scanf("%d",&t);
     while(t != -50){

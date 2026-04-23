@@ -8,5 +8,4 @@ int main(){
     for(int i = 100; i<=500; i++){
         printf("Numero: %d\n",i);
     }
-    
 }

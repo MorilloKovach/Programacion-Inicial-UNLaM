@@ -3,7 +3,9 @@
 int main()
 {
     char cod;
-
+    float efect_caja = 0, vta_tarj = 0, vta_cheq = 0;
+    float tot_venta = 0;
+    float iva = 0;
     float precio;
     printf("Digite el codigo: ");
     scanf("%c", &cod);
@@ -13,11 +15,11 @@ int main()
         getchar();
         scanf("%c", &cod);
     }
-    float efect_caja = 0, vta_tarj = 0, vta_cheq = 0;
-    float tot_venta = 0;
-    float iva = 0;
     while (cod != 'F')
     {
+        efect_caja = 0, vta_tarj = 0, vta_cheq = 0;
+        tot_venta = 0;
+        iva = 0;
         printf("\nDigite el precio: ");
         scanf("%f", &precio);
         while (precio < 0)

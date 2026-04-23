@@ -23,7 +23,7 @@ y el importe final a cobrar.
 #include<stdio.h>
 
 int main(){
-    int cod_cli,cod_pub,anio_pub,proy_dias;
+    int cod_cli,cod_pub,anio_pub,proy_dias,ANIO_ACTUAL = 2026; //Modificar si se ve desde otro año nada que ver
     char pagar;
     float importe;
     printf("Ingrese el codigo de cliente: ");
@@ -41,7 +41,6 @@ int main(){
     importe *= proy_dias;
     if(pagar == 'c') pagar = 'C';
     if(pagar == 'e') pagar = 'E';
-    int ANIO_ACTUAL = 2026; //Modificar si se ve desde otro año nada que ver
 
     if(pagar == 'C' && anio_pub == ANIO_ACTUAL) importe*=1.4;
     else if(anio_pub+2 >= ANIO_ACTUAL ) importe*=1.2;

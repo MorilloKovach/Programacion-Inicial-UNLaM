@@ -6,6 +6,8 @@ int main(){
     float maxi_p = 0;
     int cant_men15 = 0;
     int cant = 0;
+    float precioOri = precio;
+    float desc;
     char continuar;
     printf("Desea correr operaciones? (S/N): ");
     scanf("%c",&continuar);
@@ -21,8 +23,6 @@ int main(){
             printf("\nValor no valido, ingrese un precio correcto: ");
             scanf("%d",&precio);
         }
-        float precioOri = precio;
-        float desc;
         if(precio < 15000){
             precio = precio - precio * 0.035;
             desc = 3.5;

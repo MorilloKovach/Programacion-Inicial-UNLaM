@@ -13,7 +13,8 @@ ARTÍCULO xxxxx CANTIDAD xxxx IMPORTE A PAGAR $ xxxx.xx
 #include<stdio.h>
 
 int main(){
-    int codigo,unidades;
+    int codigo,unidades,aux;
+    float val;
     printf("Ingrese el codigo del articulo: ");
     scanf("%d",&codigo);
     printf("Ingrese las unidades que ha comprado: ");
@@ -23,20 +24,20 @@ int main(){
         printf("ARTICULO 10 CANTIDAD %d IMPORTE A PAGAR $%.2f",unidades,1000.0*unidades);
     }
     else if(codigo==2 || codigo == 22 || codigo == 222){
-        float val = unidades/10 * 6500;
-        int aux = unidades;
+        val = unidades/10 * 6500;
+        aux = unidades;
         unidades%=10;
         val+=unidades*700;
         unidades = aux;
         printf("ARTICULO 22 CANTIDAD %d IMPORTE A PAGAR $%.2f",unidades,val);
     }
     else if(codigo==3 || codigo == 33 ){
-        float val = unidades * 300;
+        val = unidades * 300;
         if(unidades>10) val*=0.9;
         printf("ARTICULO 33 CANTIDAD %d IMPORTE A PAGAR %.2f",unidades,val);
     }
     else if(codigo==4 || codigo == 44){
-        float val = unidades * 100;
+        val = unidades * 100;
         printf("ARTICULO 44 CANTIDAD %d IMPORTE A PAGAR %.2f",unidades,val);
     }
     else{

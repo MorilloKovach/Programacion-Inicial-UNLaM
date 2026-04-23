@@ -6,8 +6,7 @@ resultado sean menores a 6000. (1 2 4 8 16 …).
 #include<stdio.h>
 
 int main(){
-    int pot2 = 1;
-    int calc = 0;
+    int pot2 = 1, calc = 0;
     while(pot2 < 6000){
         printf("El resultado de 2^%d es: %d\n",calc++,pot2);
         pot2*=2;

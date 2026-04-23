@@ -13,11 +13,11 @@ el importe a pagar.
 #include<stdio.h>
 
 int main(){
-    int cuadernos;
+    int cuadernos,maximo50,valor_tot;
     printf("Ingrese la cantidad de cuadernos: ");
     scanf("%d",&cuadernos);
-    int maximo50 = (cuadernos>=50);
-    int valor_tot = cuadernos/30 * 250000;
+    maximo50 = (cuadernos>=50);
+    valor_tot = cuadernos/30 * 250000;
     cuadernos%=30;
     valor_tot = valor_tot + cuadernos/10 * 80000;
     cuadernos%=10;

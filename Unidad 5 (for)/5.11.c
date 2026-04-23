@@ -13,16 +13,10 @@ números ingresados.
 #include<stdio.h>
 
 int main(){
-    int N;
+    int max_val=-9999999, pos_max_val=0, min_val=999999, pos_min_val=0,prom = 0, prom_neg = 0, neg=0, posi = 0,c, N;
     printf("\nIngrese la cantidad de valores: ");
     scanf("%d",&N);
-    int max_val=-9999999, pos_max_val=0;
-    int min_val=999999, pos_min_val=0;
-    int prom = 0;
-    int prom_neg = 0, neg=0;
-    int posi = 0;
     for(int i = 0; i<N; i++){
-        int c;
         printf("\nIngrese un valor: ");
         scanf("%d",&c);
         prom+=c;

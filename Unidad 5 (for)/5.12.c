@@ -11,7 +11,7 @@ d) El promedio de dinero pagado en sueldos a los empleados durante la semana.
 */
 #include<stdio.h>
 int main(){
-    int valor_hora,codigo,horas_semanales, maxisueldo=0, codigomaxi=0, trabajan_menos_2hs=0, promedio_sueldos=0;
+    int valor_hora,codigo,horas_semanales, maxisueldo=0, codigomaxi=0, trabajan_menos_2hs=0, promedio_sueldos=0,sueldo;
     printf("Ingrese el valor hora: ");
     scanf("%d",&valor_hora);
     while(valor_hora <= 0){
@@ -23,7 +23,7 @@ int main(){
         scanf("%d",&codigo);
         printf("\nIngrese la cantidad de horas semanales que trabaja este empleado: ");
         scanf("%d",&horas_semanales);
-        int sueldo = horas_semanales * valor_hora;
+        sueldo = horas_semanales * valor_hora;
         printf("\nEl empleado con codigo %d posee un sueldo de $%d pesos a la semana",codigo, sueldo);
         if(sueldo > maxisueldo){
             sueldo = maxisueldo;

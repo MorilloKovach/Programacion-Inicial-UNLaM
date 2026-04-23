@@ -29,6 +29,11 @@ int main()
 {
     int importe, cliente;
     char forma_pago;
+    float precio_a_pagar;
+    int conteo = 0, conteoE = 0, conteoC=0, conteoB=0, conteoD=0;
+    int maximoNeto = 0;
+    float sumaImportes = 0;
+    int minimoBruto = 9999999;
     printf("Ingrese el cliente: ");
     scanf("%d", &cliente);
     while (cliente < 0)
@@ -36,10 +41,6 @@ int main()
         printf("\nIngrese un cliente valido: ");
         scanf("%d", &cliente);
     }
-    int conteo = 0, conteoE = 0, conteoC=0, conteoB=0, conteoD=0;
-    int maximoNeto = 0;
-    float sumaImportes = 0;
-    int minimoBruto = 9999999;
     while (cliente > 0)
     {
         printf("\nIngrese el importe de la venta: ");
@@ -63,7 +64,6 @@ int main()
         else if(forma_pago == 'C') conteoC++;
         else if(forma_pago == 'B') conteoB++;
         conteo++;
-        float precio_a_pagar;
         if(forma_pago == 'E'){
             precio_a_pagar = importe * 0.9;
 

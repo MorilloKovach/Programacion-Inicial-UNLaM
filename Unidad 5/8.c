@@ -3,6 +3,9 @@
 int main()
 {
     char continuar;
+    int n, antiguedad, cant_hijos, estudios_superiores;
+    float sal;
+    float orig = sal;
     printf("Desea correr operaciones? (S/N): ");
     scanf("%c", &continuar);
     while (continuar != 'S' && continuar != 'N')
@@ -13,8 +16,6 @@ int main()
     }
     while (continuar != 'N')
     {
-        int n, antiguedad, cant_hijos, estudios_superiores;
-        float sal;
         printf("\nIngrese el numero del empleado: ");
         scanf("%d", &n);
         while (n <= 0)
@@ -50,7 +51,6 @@ int main()
             getchar();
             scanf("%d", &estudios_superiores);
         } 
-        float orig = sal;
         if (antiguedad >= 10)
         {
             sal += orig * 0.1;

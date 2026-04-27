@@ -53,6 +53,11 @@ int main()
         printf("\nIngrese la forma de pago: ");
         getchar();
         scanf("%c", &forma_pago);
+        precio_a_pagar = importe;
+        if(importe <= 100000) precio_a_pagar*=0.965;
+        else if(importe <= 250000) precio_a_pagar*=0.9;
+        else if(importe <= 350000) precio_a_pagar*=0.8;
+        else precio_a_pagar*=0.75;
         while (forma_pago != 'E' && forma_pago != 'D' && forma_pago != 'C' && forma_pago != 'B')
         {
             printf("\nIngrese una forma de pago valido: ");
@@ -65,21 +70,19 @@ int main()
         else if(forma_pago == 'B') conteoB++;
         conteo++;
         if(forma_pago == 'E'){
-            precio_a_pagar = importe * 0.9;
-
+            precio_a_pagar*=0.9;
             if(precio_a_pagar > maximoNeto){
                 maximoNeto = precio_a_pagar;
             }
             printf("El cliente %d tiene un importe bruto de %d, su forma de pago fue %c, el descuento fue del %.2f y su valor neto a pagar es %.2f",cliente,importe,forma_pago,importe*0.1,precio_a_pagar);
         }
         else if(forma_pago == 'D'){
-            precio_a_pagar = importe;
             if(precio_a_pagar < minimoBruto){
                 minimoBruto = importe;
             }
         }
         if(forma_pago == 'C' || forma_pago == 'B'){
-            precio_a_pagar = importe * 1.1;
+            precio_a_pagar *= 1.1;
             printf("El cliente %d tiene un importe bruto de %d, su forma de pago fue %c, el recargo fue del %.2f y su valor neto a pagar es %.2f",cliente,importe,forma_pago, importe*0.1, precio_a_pagar);
         }
         if(forma_pago != 'E' && forma_pago != 'C' && forma_pago != 'B'){

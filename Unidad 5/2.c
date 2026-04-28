@@ -6,19 +6,21 @@ También informar la cantidad de otros símbolos que no sean ni letras ni númer
 */
 
 #include<stdio.h>
-
+#include<stdlib.h>
 int main(){
     char ing;
-    int nums=0, alfaMay=0,alfaMin=0;
-    scanf(" %c",&ing);
+    int nums=0, alfaMay=0,alfaMin=0, otras=0;
+    scanf("%c",&ing);
     while(ing != '*'){
         if(ing >= '0' && ing <= '9') nums++;
         else if((ing >= 'A' && ing <= 'Z')) alfaMay++;
         else if((ing >= 'a' && ing <= 'z')) alfaMin++;
+        else otras++;
         getchar();
-        scanf(" %c",&ing);
+        scanf("%c",&ing);
     }
     printf("Se han ingresado %d numeros. \n",nums);
     printf("Se han ingresado %d letras minusculas\n",alfaMin);
     printf("Se han ingresado %d letras mayusculas. \n",alfaMay);
+    printf("Se han ingresado %d caracteres extranios. \n",otras);
 }

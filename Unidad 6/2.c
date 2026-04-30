@@ -18,62 +18,80 @@ sólo es divisible por 1 y por sí mismo).
 contadora. Retorna el promedio si contador es mayor a 0 sino Retorna 0. Se debe preguntar después del retorno el valor del promedio.
 */
 
-/*
-Primos existentes en el rango [1,50]
-[2,3,5,7,11,13,17,19,23,27,31,37,41,43,47]
-*/
+#include <stdio.h>
+int CalculaResto(int dividendo, int divisor);
+int esPar(int num);
+int esPrimo(int num);
+float promedio(int acum, int cont);
+int IngrDatoValCF(int inicio, int fin, int condicion);
 
-#include<stdio.h>
-
-int CalculaResto(int dividendo, int divisor)
+int main()
 {
-    return dividendo % divisor;
-}
-
-int esPar(int num)
-{
-    return num % 2 == 0;
-}
-
-int esPrimo(int num)
-{
-    return (num == 2 || num == 3 || num == 5 || num == 7 || num == 11 || num == 13 || num == 17 || num == 19 || num == 23 || num == 27 || num == 31 || num == 37 || num == 41 || num == 43 || num == 47);
-}
-
-float promedio(int acum, int cont)
-{
-    if (cont > 0)
-        return (float)acum / cont;
-    return 0;
-}
-int IngrDatoValCF(int inicio, int fin, int condicion)
-{
-    int num;
-    printf("\nIngrese el numero: ");
-    scanf("%d", &num);
     int cantPrimos = 0, cant = 0, cant_pares = 0, cant_impares = 0, suma_impares = 0;
-    while (num != condicion)
+    int num = IngrDatoValCF(1, 50, -10);
+    while (num != -10)
     {
-        while (num < inicio || num > fin)
-        {
-            printf("\nIngrese un numero valido: ");
-            scanf("%d", &num);
-        }
         cant++;
         cant_pares += esPar(num);
         cant_impares += !esPar(num);
         suma_impares += !esPar(num) * num;
         cantPrimos += esPrimo(num);
-        printf("\nIngrese el numero: ");
-        scanf("%d", &num);
+        num = IngrDatoValCF(1, 50, -10);
     }
-    printf("\nEl porcentaje de numeros primos que existe es: %.2f%%",(float)cantPrimos/cant*100.0);
-    printf("\nLa cantidad de numeros pares que existe son de: %d",cant_pares);
-    printf("\nEl promedio de los impares es: %.2f",promedio(suma_impares, cant_impares));
+    printf("\n%d %d ", cantPrimos, cant);
+    printf("\nEl porcentaje de numeros primos que existe es: %.2f%%", (float)cantPrimos / cant * 100.0);
+    printf("\nLa cantidad de numeros pares que existe son de: %d", cant_pares);
+    printf("\nEl promedio de los impares es: %.2f\n", promedio(suma_impares, cant_impares));
+    return 0;
+}
+int CalculaResto(int dividendo, int divisor)
+{
+    int cuenta = dividendo % divisor;
+    return cuenta;
 }
 
-int main()
+int esPar(int num)
 {
-    IngrDatoValCF(1, 50, -10);
-    return 0;
+    int band = 0;
+    if (CalculaResto(num,2)==0)
+        band = 1;
+    return band;
+}
+
+int esPrimo(int num)
+{
+    int n1 = 2;
+    int band = 1;
+    if (num == 1){
+        band = 0;
+    }
+    while (n1 < num && band)
+    {
+        if (CalculaResto(num,n1)==0)
+        {
+            band = 0;
+        }
+        n1++;
+    }
+    return band;
+}
+
+float promedio(int acum, int cont)
+{
+    float cuenta;
+    if(cont == 0) cuenta = 0;
+    else cuenta = (float)acum/cont;
+    return cuenta;
+}
+int IngrDatoValCF(int inicio, int fin, int condicion)
+{
+    int num;
+    printf("\nIngrese el valor: ");
+    scanf("%d", &num);
+    while (num != condicion && (num < inicio && num > fin))
+    {
+        printf("\nIngrese un valor valido: ");
+        scanf("%d", &num);
+    }
+    return num;
 }

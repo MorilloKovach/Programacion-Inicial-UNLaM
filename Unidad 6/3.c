@@ -10,7 +10,40 @@ calcular el menor o el mayor valor de cada terna según un parámetro de configu
 */
 
 #include <stdio.h>
+int MayorMenor(int v1, int v2, int v3, int mi);
 
+int main()
+{
+    int a1, a2, a3;
+    int sumar_may = 0;
+    int contar=0;
+    int minimo_terna = 0;
+    int aux=1;
+    int maxi,mini;
+    printf("\nIngrese la terna: ");
+    scanf("%d%d%d", &a1, &a2, &a3);
+    while (a1 != 96 || a2 != 97 || a3 != 98)
+    {
+        while (a1 > 99 || a1 < 0 || a2 > 99 || a2 < 0 || a3 > 99 || a3 < 0)
+        {
+            printf("\nIngresa una terna valida: ");
+            scanf("%d%d%d", &a1, &a2, &a3);
+        }
+        mini = MayorMenor(a1,a2,a3, 1);
+        maxi = MayorMenor(a1,a2,a3,0);
+        contar++;
+        sumar_may+=maxi;
+        if(aux || mini < minimo_terna){
+            minimo_terna = mini;
+            aux = 0;
+        }
+        printf("\nEl minimo de la terna es %d y su maximo es %d",mini,maxi);
+        printf("\nIngrese la terna: ");
+        scanf("%d%d%d", &a1, &a2, &a3);
+    }
+    printf("\nEl promedio de los mayores de las ternas es: %.2f",(float)sumar_may/contar);
+    printf("\nEl minimo ingresado es: %d",minimo_terna);
+}
 int MayorMenor(int v1, int v2, int v3, int mi)
 {
     if (mi)
@@ -44,37 +77,4 @@ int MayorMenor(int v1, int v2, int v3, int mi)
             return v1;
         return v2;
     }
-}
-
-int main()
-{
-    int a1, a2, a3;
-    int sumar_may = 0;
-    int contar=0;
-    int minimo_terna = 0;
-    int aux=1;
-    int maxi,mini;
-    printf("\nIngrese la terna: ");
-    scanf("%d%d%d", &a1, &a2, &a3);
-    while (a1 != 96 || a2 != 97 || a3 != 98)
-    {
-        while (a1 > 99 || a1 < 0 || a2 > 99 || a2 < 0 || a3 > 99 || a3 < 0)
-        {
-            printf("\nIngresa una terna valida: ");
-            scanf("%d%d%d", &a1, &a2, &a3);
-        }
-        mini = MayorMenor(a1,a2,a3, 1);
-        maxi = MayorMenor(a1,a2,a3,0);
-        contar++;
-        sumar_may+=maxi;
-        if(aux || mini < minimo_terna){
-            minimo_terna = mini;
-            aux = 0;
-        }
-        printf("\nEl minimo de la terna es %d y su maximo es %d",mini,maxi);
-        printf("\nIngrese la terna: ");
-        scanf("%d%d%d", &a1, &a2, &a3);
-    }
-    printf("\nEl promedio de los mayores de las ternas es: %.2f",(float)sumar_may/contar);
-    printf("\nEl minimo ingresado es: %d",minimo_terna);
 }

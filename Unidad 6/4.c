@@ -22,31 +22,11 @@ Usar una función para mostrar el menú y retornar el valor elegido.
 
 #include<stdio.h>
 #include<stdlib.h>
-int mostrarMenu(){
-    int operacion;
-    printf("\n----Menu de opciones-----\n");
-    printf("\n1.- Sumar");
-    printf("\n2.- Restar");
-    printf("\n3.- Multiplicar");
-    printf("\n4.- Dividir");
-    printf("\n5.- Ingresar Nuevos Numeros");
-    printf("\n6.- Salir");
-    printf("\nIngrese la opcion: ");
-    scanf("%d",&operacion);
-    return operacion;
-}
-int sumar(int a, int b){
-    return a+b;
-}
-int restar(int a, int b){
-    return a-b;
-}
-int multiplicar(int a, int b){
-    return a*b;
-}
-float dividir(int a, int b){
-    return (float)a/b;
-}
+int mostrarMenu();
+int sumar(int a, int b);
+int restar(int a, int b);
+int multiplicar(int a, int b);
+float dividir(int a, int b);
 
 int main(){
     int a,b;
@@ -86,4 +66,30 @@ int main(){
         printf("\nIngrese otra opcion: ");
         s = mostrarMenu();
     }
+}
+
+int mostrarMenu(){
+    int operacion;
+    printf("\n----Menu de opciones-----\n");
+    printf("\n1.- Sumar");
+    printf("\n2.- Restar");
+    printf("\n3.- Multiplicar");
+    printf("\n4.- Dividir");
+    printf("\n5.- Ingresar Nuevos Numeros");
+    printf("\n6.- Salir");
+    printf("\nIngrese la opcion: ");
+    scanf("%d",&operacion);
+    return operacion;
+}
+int sumar(int a, int b){
+    return a+b;
+}
+int restar(int a, int b){
+    return a-b;
+}
+int multiplicar(int a, int b){
+    return a*b;
+}
+float dividir(int a, int b){
+    return (float)a/b;
 }

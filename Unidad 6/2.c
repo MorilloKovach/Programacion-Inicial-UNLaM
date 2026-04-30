@@ -38,7 +38,6 @@ int main()
         cantPrimos += esPrimo(num);
         num = IngrDatoValCF(1, 50, -10);
     }
-    printf("\n%d %d ", cantPrimos, cant);
     printf("\nEl porcentaje de numeros primos que existe es: %.2f%%", (float)cantPrimos / cant * 100.0);
     printf("\nLa cantidad de numeros pares que existe son de: %d", cant_pares);
     printf("\nEl promedio de los impares es: %.2f\n", promedio(suma_impares, cant_impares));

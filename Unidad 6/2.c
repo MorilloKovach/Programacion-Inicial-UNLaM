@@ -52,7 +52,7 @@ int CalculaResto(int dividendo, int divisor)
 int esPar(int num)
 {
     int band = 0;
-    if (CalculaResto(num,2)==0)
+    if (CalculaResto(num, 2) == 0)
         band = 1;
     return band;
 }
@@ -61,12 +61,13 @@ int esPrimo(int num)
 {
     int n1 = 2;
     int band = 1;
-    if (num == 1){
+    if (num == 1)
+    {
         band = 0;
     }
     while (n1 < num && band)
     {
-        if (CalculaResto(num,n1)==0)
+        if (CalculaResto(num, n1) == 0)
         {
             band = 0;
         }
@@ -78,8 +79,10 @@ int esPrimo(int num)
 float promedio(int acum, int cont)
 {
     float cuenta;
-    if(cont == 0) cuenta = 0;
-    else cuenta = (float)acum/cont;
+    if (cont == 0)
+        cuenta = 0;
+    else
+        cuenta = (float)acum / cont;
     return cuenta;
 }
 int IngrDatoValCF(int inicio, int fin, int condicion)

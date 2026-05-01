@@ -16,7 +16,6 @@ int main()
     opcion = mostrarMenu();
     while (!(t1 < t2 && t2 < t3))
     {
-
         while (opcion != 4)
         {
             switch (opcion)

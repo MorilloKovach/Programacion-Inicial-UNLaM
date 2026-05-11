@@ -6,36 +6,35 @@
 28 dias: 2
 */
 
-int comprobarMes31(int mes){
+int comprobarMes31(int mes)
+{
     int band = 0;
-    if(mes==1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
+    if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
         band = 1;
     return band;
 }
 
-int comprobarMes30(int mes){
+int comprobarMes30(int mes)
+{
     int band = 0;
-    if(mes==4 || mes == 6 || mes == 9 || mes == 11)
+    if (mes == 4 || mes == 6 || mes == 9 || mes == 11)
         band = 1;
     return band;
 }
 
 int validar_fecha(int dia, int mes, int anio)
 {
-    if (dia <= 0 || mes <= 0 || anio <= 0)
-        return 0;
-    if (comprobarMes31(mes) && dia <= 31)
-        return 1;
-    if ((comprobarMes30(mes) && dia <= 30))
-        return 1;
-    if ((mes == 2 && dia <= 28) || (mes==2 && ((anio%4==0 && anio%100 != 0) || anio%400==0)) && dia <= 29)
-        return 1;
-    return 0;
+    int band = 0;
+    if (comprobarMes31(mes) && dia <= 31) band = 1;
+    if ((comprobarMes30(mes) && dia <= 30)) band = 1;
+    if ((mes == 2 && dia <= 28) || (mes == 2 && ((anio % 4 == 0 && anio % 100 != 0) || anio % 400 == 0)) && dia <= 29)
+        band = 1;
+    return band;
 }
 
 void retroceder_dia(int dia, int mes, int anio, int cant)
 {
-    for (int i = 0; i < cant && validar_fecha(dia,mes,anio); i++)
+    for (int i = 0; i < cant && validar_fecha(dia, mes, anio); i++)
     {
         if (dia == 1 && mes == 1)
         {
@@ -50,14 +49,21 @@ void retroceder_dia(int dia, int mes, int anio, int cant)
                 mes--;
                 if (comprobarMes31(mes))
                     dia = 31;
-                else if (comprobarMes30(mes))
-                    dia = 30;
-                else if (mes == 2)
+                else
                 {
-                    if ((anio % 4 == 0 && anio%100 != 0 ) || (anio%400==0))
-                        dia = 29;
+                    if (comprobarMes30(mes))
+                        dia = 30;
+
                     else
-                        dia = 28;
+                    {
+                        if (mes == 2)
+                        {
+                            if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0))
+                                dia = 29;
+                            else
+                                dia = 28;
+                        }
+                    }
                 }
             }
             else
@@ -66,41 +72,56 @@ void retroceder_dia(int dia, int mes, int anio, int cant)
             }
         }
     }
-    printf("\n%d/%d/%d",dia,mes,anio);
+    printf("\n%d/%d/%d", dia, mes, anio);
 }
 
-void avanzar_dia(int dia, int mes, int anio, int cant){
-    for(int i = 0; i<cant && validar_fecha(dia,mes,anio); i++){
-        if(dia==31 && mes == 12){
+
+void avanzar_dia(int dia, int mes, int anio, int cant)
+{
+    for (int i = 0; i < cant && validar_fecha(dia, mes, anio); i++)
+    {
+        if (dia == 31 && mes == 12)
+        {
             anio++;
-            dia=mes=1;
+            dia = mes = 1;
         }
-        else{
-            if(dia==30 && comprobarMes30(mes)){
+        else
+        {
+            if (dia == 30 && comprobarMes30(mes))
+            {
                 mes++;
                 dia = 1;
             }
-            else{
-                if(dia==31 && comprobarMes31(mes)){
+            else
+            {
+                if (dia == 31 && comprobarMes31(mes))
+                {
                     dia = 1;
                     mes++;
                 }
-                else{
-                    if(((anio%4==0 && anio%100!=0) || anio%400==0) && mes == 2){
-                        if(dia==29){
+                else
+                {
+                    if (((anio % 4 == 0 && anio % 100 != 0) || anio % 400 == 0) && mes == 2)
+                    {
+                        if (dia == 29)
+                        {
                             dia = 1;
                             mes++;
                         }
-                        else{
+                        else
+                        {
                             dia++;
                         }
                     }
-                    else{
-                        if(mes==2 && dia == 28){
+                    else
+                    {
+                        if (mes == 2 && dia == 28)
+                        {
                             dia = 1;
                             mes++;
                         }
-                        else{
+                        else
+                        {
                             dia++;
                         }
                     }
@@ -108,27 +129,27 @@ void avanzar_dia(int dia, int mes, int anio, int cant){
             }
         }
     }
-    printf("\n%d/%d/%d",dia,mes,anio);
+    printf("\n%d/%d/%d", dia, mes, anio);
 }
 int main()
 {
     int dia, mes, anio, N;
     printf("\nIngrese la fecha: ");
-    scanf("%d/%d/%d",&dia,&mes,&anio);
+    scanf("%d/%d/%d", &dia, &mes, &anio);
 
     while (!validar_fecha(dia, mes, anio))
     {
         printf("\nIngrese una fecha valida: ");
-        scanf("%d/%d/%d",&dia,&mes,&anio);
+        scanf("%d/%d/%d", &dia, &mes, &anio);
     }
     printf("\nLa fecha de ayer fue: ");
     retroceder_dia(dia, mes, anio, 1);
     printf("\nY la de maniana sera: ");
-    avanzar_dia(dia,mes,anio,1);
+    avanzar_dia(dia, mes, anio, 1);
     printf("\nIngrese N: ");
-    scanf("%d",&N);
-    printf("\nEl resultado de volver %d dias es: ",N);
+    scanf("%d", &N);
+    printf("\nEl resultado de volver %d dias es: ", N);
     retroceder_dia(dia, mes, anio, N);
-    printf("\nY el resultado de ir %d dias adelante es: ",N);
-    avanzar_dia(dia,mes,anio,N);
+    printf("\nY el resultado de ir %d dias adelante es: ", N);
+    avanzar_dia(dia, mes, anio, N);
 }

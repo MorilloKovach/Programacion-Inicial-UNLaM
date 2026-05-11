@@ -9,7 +9,7 @@ int main(){
     int positivos=0;
     int minNum=999999999, minOrd=0;
     int ingresados=0,pares=0;
-    int valorMul7=0, ordMul7=0;
+    int valorMul7=-999999999, ordMul7=0;
     int num;
     scanf("%d",&num);
     while(num != 0){

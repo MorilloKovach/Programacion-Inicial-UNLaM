@@ -1,9 +1,9 @@
 #include<stdio.h>
 
 int algo(){
-    int s = 5;
+    int s = 0;
 }
 
 int main(){
-    printf("%d",algo());
+    printf
 }

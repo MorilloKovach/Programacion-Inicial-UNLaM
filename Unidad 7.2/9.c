@@ -15,22 +15,22 @@ int HabilitadosConsecutivos(char[], int[], int, int, int);
 int main()
 {
     char Cine[12][9];
-    int butaca[9];
-    int filas = 12, butacas = 9, i, j, butak = 8;
+    int butacaOrd[9];
+    int filas = 12, butacas = 9, i, j, numButaca = 8;
     for (i = 0; i < 4; i++)
     {
-        butaca[i] = butak;
-        butak -= 2;
+        butacaOrd[i] = numButaca;
+        numButaca -= 2;
     }
-    butak = 1;
+    numButaca = 1;
     for (i = 4; i < 9; i++)
     {
-        butaca[i] = butak;
-        butak += 2;
+        butacaOrd[i] = numButaca;
+        numButaca += 2;
     }
     for (i = 0; i < 9; i++)
     {
-        printf("%d ", butaca[i]);
+        printf("%d ", butacaOrd[i]);
     }
     for (i = 0; i < filas; i++)
     {
@@ -40,11 +40,11 @@ int main()
         }
     }
     MostrarMatriz(Cine, filas, butacas);
-    IngrDatos(Cine, butaca, filas, butacas);
+    IngrDatos(Cine, butacaOrd, filas, butacas);
     Reservas(Cine, filas, butacas);
     FilasVacias(Cine, filas, butacas);
     EspectadoresMaximos(Cine, filas, butacas);
-    ListarButacas(Cine, butaca, filas, butacas);
+    ListarButacas(Cine, butacaOrd, filas, butacas);
     return 0;
 }
 void MostrarMatriz(char mat[][9], int filas, int butacas)
@@ -61,12 +61,12 @@ void MostrarMatriz(char mat[][9], int filas, int butacas)
     printf("\n");
 }
 
-int ButacaInicial(int butaca[], int num_butaca, int butacas)
+int ButacaInicial(int butacaOrd[], int num_butaca, int butacas)
 {
     int i = 0, pos = -1;
     while (i < butacas && pos == -1)
     {
-        if (butaca[i] == num_butaca)
+        if (butacaOrd[i] == num_butaca)
         {
             pos = i;
         }
@@ -75,10 +75,10 @@ int ButacaInicial(int butaca[], int num_butaca, int butacas)
     return pos;
 }
 
-int SePuedeReservar(char fila[], int butaca[], int butacas, int num_butaca, int espacios)
+int SePuedeReservar(char fila[], int butacaOrd[], int butacas, int num_butaca, int espacios)
 {
     int i = 0, cant = 0, posible = 1;
-    i = ButacaInicial(butaca, num_butaca, butacas);
+    i = ButacaInicial(butacaOrd, num_butaca, butacas);
     while (i < butacas && cant < espacios && posible == 1)
     {
         if (fila[i] == 'R')
@@ -105,9 +105,9 @@ int EstaDentroDelRango(int linf, int lsup, int num)
     return band;
 }
 
-void ModificarMatriz(char fila[], int butaca[], int num_butaca, int butacas, int espacios)
+void ModificarMatriz(char fila[], int butacaOrd[], int num_butaca, int butacas, int espacios)
 {
-    int pos = ButacaInicial(butaca, num_butaca, butacas), i;
+    int pos = ButacaInicial(butacaOrd, num_butaca, butacas), i;
     for (i = pos; i < pos + espacios; i++)
     {
         fila[i] = 'R';
@@ -133,7 +133,7 @@ int HabilitadosConsecutivos(char fila[], int butacas[], int num_butaca, int buta
     }
     return max;
 }
-void IngrDatos(char mat[][9], int butaca[], int filas, int butacas)
+void IngrDatos(char mat[][9], int butacaOrd[], int filas, int butacas)
 {
     int fila, butacaEspacios, numeroButaca;
     do
@@ -157,16 +157,16 @@ void IngrDatos(char mat[][9], int butaca[], int filas, int butacas)
             printf("\nIngrese el numero del cual desea arrancar a reservar butaca: ");
             scanf("%d", &numeroButaca);
             while (!EstaDentroDelRango(1, 9, numeroButaca) || 
-            (mat[fila - 1][ButacaInicial(butaca, numeroButaca, butacas)] == 'R' && 
-            HabilitadosConsecutivos(mat[fila - 1], butaca, numeroButaca, butacaEspacios, butacas) - butacaEspacios >= 0))
+            (mat[fila - 1][ButacaInicial(butacaOrd, numeroButaca, butacas)] == 'R' && 
+            HabilitadosConsecutivos(mat[fila - 1], butacaOrd, numeroButaca, butacaEspacios, butacas) - butacaEspacios >= 0))
             {
                 printf("\nError. Ingrese un numero valido: ");
                 scanf("%d", &numeroButaca);
             }
 
-            if (SePuedeReservar(mat[fila - 1], butaca, butacas, numeroButaca, butacaEspacios))
+            if (SePuedeReservar(mat[fila - 1], butacaOrd, butacas, numeroButaca, butacaEspacios))
             {
-                ModificarMatriz(mat[fila - 1], butaca, numeroButaca, butacas, butacaEspacios);
+                ModificarMatriz(mat[fila - 1], butacaOrd, numeroButaca, butacas, butacaEspacios);
             }
             else
             {
@@ -239,11 +239,7 @@ void EspectadoresMaximos(char mat[][9], int filas, int butacas)
 
 void ListarButacas(char mat[][9], int butacasOrd[], int filas, int butacas)
 {
-    int i, j, cantidadButacas[9], butacasOrd2[9];
-    for(i=0;i<butacas;i++){
-        butacasOrd2[i] = butacasOrd[i]-1;
-        printf("%d ",butacasOrd2[i]);
-    }
+    int i, j, cantidadButacas[9];
     for (i = 0; i < butacas; i++)
     {
         cantidadButacas[i] = 0;
@@ -254,16 +250,16 @@ void ListarButacas(char mat[][9], int butacasOrd[], int filas, int butacas)
         {
             if (mat[i][j] == 'R')
             {
-                cantidadButacas[butacasOrd2[j]]++;
+                cantidadButacas[j]++;
             }
         }
     }
-    ordenar(butacasOrd2, cantidadButacas, butacas);
-
+    ordenar(butacasOrd, cantidadButacas, butacas);
+    printf("\n");
     printf("\nButaca\tCantidad.");
     for (i = 0; i < butacas; i++)
     {
-        printf("\n%d\t%d", butacasOrd2[i]+1, cantidadButacas[i]);
+        printf("\n%d\t%d", butacasOrd[i], cantidadButacas[i]);
     }
 }
 

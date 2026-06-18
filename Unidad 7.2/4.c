@@ -34,29 +34,23 @@ void IngrDato(int mat[5][12])
     int sucursal, rubro, cantidad_pedido;
     do
     {
-        printf("\nIngrese el numero de la sucursal: ");
-        scanf("%d", &sucursal);
-        while (sucursal < 0 || sucursal > 5)
+        do
         {
             printf("\nIngrese el numero de la sucursal: ");
             scanf("%d", &sucursal);
-        }
+        } while (sucursal < 0 || sucursal > 5);
         if (sucursal != 0)
         {
-            printf("\nIngrese el codigo del rubro: ");
-            scanf("%d", &rubro);
-            while (rubro <= 0 || rubro > 12)
+            do
             {
                 printf("\nIngrese el codigo del rubro: ");
                 scanf("%d", &rubro);
-            }
-            printf("\nIngrese la cantidad de pedidos: ");
-            scanf("%d", &cantidad_pedido);
-            while (cantidad_pedido <= 0)
+            } while (rubro <= 0 || rubro > 12);
+            do
             {
                 printf("\nIngrese la cantidad de pedidos: ");
                 scanf("%d", &cantidad_pedido);
-            }
+            } while (cantidad_pedido <= 0);
             mat[sucursal - 1][rubro - 1] += cantidad_pedido;
         }
     } while (sucursal != 0);
